@@ -1,9 +1,5 @@
-
-
-
-
-# YouCompleteMe Win64已编译版本
-YouCompleteMe Windows 64已编译版本,支持C/C++补全,更为详细的问题请移步[https://github.com/ycm-core/YouCompleteMe](https://github.com/ycm-core/YouCompleteMe)
+# YouCompleteMe Win64 已编译版本(ts-completer)
+YouCompleteMe Windows 64已编译版本, 支持javascript补全, 更为详细的问题请移步[https://github.com/ycm-core/YouCompleteMe](https://github.com/ycm-core/YouCompleteMe)
 
 ## 使用方法
 使用[VundleVim/Vundle.vim](https://github.com/VundleVim/Vundle.vim)管理vim插件
