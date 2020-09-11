@@ -1,14 +1,6 @@
 # YouCompleteMe Win64 已编译版本(ts-completer)
 YouCompleteMe Windows 64已编译版本, 支持javascript补全, 更为详细的问题请移步[https://github.com/ycm-core/YouCompleteMe](https://github.com/ycm-core/YouCompleteMe)
 
-## 使用方法
-使用[VundleVim/Vundle.vim](https://github.com/VundleVim/Vundle.vim)管理vim插件
-```
-if(has("win64"))
-    Plugin 'katosun2/Youcomplete'
-endif
-```
-
 ## 编译环境
 1. python 3.8.5 64位
 2. Visual Studio 2017
