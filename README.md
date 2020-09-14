@@ -21,7 +21,7 @@ python install.py --clang-completer --ts-completer --msvc=15
 ```
 
 ## ycm安装或补充缺失的文件 
-1. [必须]将 libclang.dll 复制一份到 ``YouCompleteMe/third_party/ycmd/third_party/clang``
+1. [必须]将 libclang.dll 复制一份到 ``YouCompleteMe/third_party/ycmd/third_party/clang/lib/clang/``下面
 
 ## 编译时碰到问题
 ### 出现tsserver为空，无法继续编译
