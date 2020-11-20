@@ -277,7 +277,7 @@ def GetDiagnosticMatchesInCurrentWindow():
 def AddDiagnosticMatch( match ):
   # TODO: Use matchaddpos which is much faster given that we always are using a
   # location rather than an actual pattern
-  return GetIntValue( f"matchadd('{ match.group }', '{ match.pattern }')" )
+  return GetIntValue( f"matchadd('{ match.group }', '{ match.pattern }', -1)" )
 
 
 def RemoveDiagnosticMatch( match ):
@@ -398,6 +398,9 @@ def ComputeFittingHeightForCurrentWindow():
 
 
 def SetFittingHeightForCurrentWindow():
+  if int( vim.current.buffer.vars.get( 'ycm_no_resize', 0 ) ):
+    return
+
   vim.command( f'{ ComputeFittingHeightForCurrentWindow() }wincmd _' )
 
 
@@ -715,7 +718,10 @@ def EscapeForVim( text ):
 
 
 def CurrentFiletypes():
-  return ToUnicode( vim.eval( "&filetype" ) ).split( '.' )
+  filetypes = vim.eval( "&filetype" )
+  if not filetypes:
+    filetypes = 'ycm_nofiletype'
+  return ToUnicode( filetypes ).split( '.' )
 
 
 def CurrentFiletypesEnabled( disabled_filetypes ):
@@ -729,7 +735,10 @@ def CurrentFiletypesEnabled( disabled_filetypes ):
 
 def GetBufferFiletypes( bufnr ):
   command = f'getbufvar({ bufnr }, "&ft")'
-  return ToUnicode( vim.eval( command ) ).split( '.' )
+  filetypes = vim.eval( command )
+  if not filetypes:
+    filetypes = 'ycm_nofiletype'
+  return ToUnicode( filetypes ).split( '.' )
 
 
 def FiletypesForBuffer( buffer_object ):
