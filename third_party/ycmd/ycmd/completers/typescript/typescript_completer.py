@@ -371,7 +371,7 @@ class TypeScriptCompleter( Completer ):
 
 
   def SupportedFiletypes( self ):
-    return [ 'javascript', 'typescript', 'typescriptreact', 'json' ]
+    return [ 'javascript', 'typescript', 'typescriptreact' ]
 
 
   def SignatureHelpAvailable( self ):
